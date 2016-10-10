@@ -189,6 +189,7 @@ return [
         App\Providers\OAuthServiceProvider::class,
         App\Providers\ApiExceptionHandlerProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
     ],
 
     /*
@@ -250,6 +251,8 @@ return [
 
         // API
         'Authorizer' => LucaDegasperi\OAuth2Server\Facades\Authorizer::class,
+
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
     ],
 
 ];
