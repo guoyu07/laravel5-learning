@@ -4,6 +4,7 @@ use App\Models\User;
 use App\Models\Topic;
 use App\Models\Reply;
 use App\Models\Site;
+use App\Models\Todo;
 use Carbon\Carbon;
 
 /*
@@ -67,3 +68,13 @@ $factory->define(Site::class, function (Faker\Generator $faker) {
         'updated_at'    => Carbon::now()->toDateTimeString(),
     ];
 });
+
+$factory->define(Todo::class, function (Faker\Generator $faker) {
+    return [
+        'name'        => $faker->name,
+        'tag'         => $faker->text(10),
+        'description' => $faker->text(200),
+    ];
+});
+
+

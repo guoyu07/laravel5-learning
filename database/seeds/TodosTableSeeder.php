@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Todo;
 use Illuminate\Database\Seeder;
 
 class TodosTableSeeder extends Seeder
@@ -11,11 +12,8 @@ class TodosTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('todos')->insert([
-            'name'        => str_random(10),
-            'tag'         => 'tag' . str_random(10),
-            'description' => bcrypt('secret'),
-        ]);
+        $todos = factory(Todo::class)->times(300)->make();
+        Todo::insert($todos->toArray());
     }
 }
 
