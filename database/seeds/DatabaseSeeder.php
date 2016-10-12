@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class DatabaseSeeder extends Seeder
 {
-    protected $seeders = [
+    protected static $seeders = [
         'UsersTableSeeder',
         'LinksTableSeeder',
         'CategoriesTableSeeder',
@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
 
         Model::unguard();
 
-        foreach ($this->seeders as $seedClass) {
+        foreach (self::$seeders as $seedClass) {
             $this->call($seedClass);
         }
 
