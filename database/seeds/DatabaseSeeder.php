@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         'HotTopicsTableSeeder',
         'SitesTableSeeder',
         'OauthClientsTableSeeder',
+        'TodosTableSeeder',
     ];
 
     public function run()

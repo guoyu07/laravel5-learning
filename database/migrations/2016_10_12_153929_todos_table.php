@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Todos extends Migration
+class TodosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -16,9 +16,9 @@ class Todos extends Migration
             $table->increments('id');
             $table->text('name');
             $table->text('tag')->nullable();
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('done_at');
+            $table->timestamp('done_at')->nullable();
         });
     }
 
