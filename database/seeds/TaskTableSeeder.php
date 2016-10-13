@@ -1,15 +1,14 @@
 <?php
 
+use App\Models\Task;
 use Illuminate\Database\Seeder;
-
-// composer require laracasts/testdummy
-use Laracasts\TestDummy\Factory as TestDummy;
 
 class TaskTableSeeder extends Seeder {
 
     public function run()
     {
-        // TestDummy::times(20)->create('App\Post');
+        $tasks = factory(Task::class)->times(123)->make();
+        Task::insert($tasks->toArray());
     }
 
 }

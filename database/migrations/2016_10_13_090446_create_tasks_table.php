@@ -15,9 +15,8 @@ class CreateTasksTable extends Migration {
 		Schema::create('tasks', function(Blueprint $table) {
             $table->increments('id');
             $table->string('title')->index();
-            $table->timestamp('created_at')->useCurrent();
             $table->text('description')->nullable();
-            $table->timestamps();
+			$table->timestamp('created_at')->useCurrent();
         });
 	}
 

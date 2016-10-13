@@ -5,6 +5,7 @@ use App\Models\Topic;
 use App\Models\Reply;
 use App\Models\Site;
 use App\Models\Todo;
+use App\Models\Task;
 use Carbon\Carbon;
 
 /*
@@ -77,4 +78,10 @@ $factory->define(Todo::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(Task::class, function (Faker\Generator $faker) {
+    return [
+        'title'       => $faker->words(6, true),
+        'description' => $faker->paragraph(2),
+    ];
+});
 
