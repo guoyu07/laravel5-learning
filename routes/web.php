@@ -118,3 +118,9 @@ Route::get('/github-card', 'UsersController@githubCard')->name('users.github-car
 Route::group(['middleware' => ['auth', 'admin_auth']], function () {
     Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 });
+
+# ------------------ Todo Route ------------------------
+Route::resource('todos', 'TodoController');
+
+# ------------------ Task Route ------------------------
+Route::resource('tasks', 'TaskController');
