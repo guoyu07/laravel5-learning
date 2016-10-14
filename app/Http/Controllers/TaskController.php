@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Models\Task;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller {
@@ -11,7 +12,8 @@ class TaskController extends Controller {
 	/**
 	 * Display a listing of the resource.
 	 *
-	 * @return Response
+	 * @return RedirectResponse
+	 * @throws \InvalidArgumentException
 	 */
 	public function index()
 	{
@@ -23,7 +25,7 @@ class TaskController extends Controller {
 	/**
 	 * Show the form for creating a new resource.
 	 *
-	 * @return Response
+	 * @return RedirectResponse
 	 */
 	public function create()
 	{
@@ -34,15 +36,15 @@ class TaskController extends Controller {
 	 * Store a newly created resource in storage.
 	 *
 	 * @param Request $request
-	 * @return Response
+	 * @return RedirectResponse
 	 */
 	public function store(Request $request)
 	{
 		$task = new Task();
 
-		$task->title = $request->input("title");
-        $task->created_at = $request->input("created_at");
-        $task->description = $request->input("description");
+		$task->title = $request->input('title');
+        $task->created_at = $request->input('created_at');
+        $task->description = $request->input('description');
 
 		$task->save();
 
@@ -52,8 +54,9 @@ class TaskController extends Controller {
 	/**
 	 * Display the specified resource.
 	 *
-	 * @param  int  $id
-	 * @return Response
+	 * @param  int $id
+	 * @return RedirectResponse
+	 * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
 	 */
 	public function show($id)
 	{
@@ -65,8 +68,9 @@ class TaskController extends Controller {
 	/**
 	 * Show the form for editing the specified resource.
 	 *
-	 * @param  int  $id
-	 * @return Response
+	 * @param  int $id
+	 * @return RedirectResponse
+	 * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
 	 */
 	public function edit($id)
 	{
@@ -78,17 +82,19 @@ class TaskController extends Controller {
 	/**
 	 * Update the specified resource in storage.
 	 *
-	 * @param  int  $id
+	 * @param  int    $id
 	 * @param Request $request
-	 * @return Response
+	 * @return RedirectResponse
+	 * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
 	 */
 	public function update(Request $request, $id)
 	{
+		/** @var \App\Models\Task $task */
 		$task = Task::findOrFail($id);
 
-		$task->title = $request->input("title");
-        $task->created_at = $request->input("created_at");
-        $task->description = $request->input("description");
+		$task->title = $request->input('title');
+        $task->created_at = $request->input('created_at');
+        $task->description = $request->input('description');
 
 		$task->save();
 
@@ -98,8 +104,10 @@ class TaskController extends Controller {
 	/**
 	 * Remove the specified resource from storage.
 	 *
-	 * @param  int  $id
-	 * @return Response
+	 * @param  int $id
+	 * @return RedirectResponse
+	 * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
+	 * @throws \Exception
 	 */
 	public function destroy($id)
 	{

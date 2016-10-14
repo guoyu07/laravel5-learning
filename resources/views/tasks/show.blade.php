@@ -1,4 +1,5 @@
-@extends('layout')
+@extends('layouts.default')
+
 @section('header')
 <div class="page-header">
         <h1>Tasks / Show #{{$task->id}}</h1>
