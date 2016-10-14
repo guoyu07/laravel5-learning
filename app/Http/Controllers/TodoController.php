@@ -29,18 +29,23 @@ class TodoController extends Controller
      */
     public function create()
     {
-        //
+        return view('todos.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        $todo = new Todo();
+        $todo->name = $request->input("title");
+        $todo->description = $request->input("description");
+        $todo->created_at = date('Y-m-d', strtotime('now'));
+        $todo->save();
+        return redirect()->route('todos.index')->with('message', 'Item created successfully.');
     }
 
     /**

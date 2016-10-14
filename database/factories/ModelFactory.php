@@ -75,6 +75,7 @@ $factory->define(Todo::class, function (Faker\Generator $faker) {
         'name'        => $faker->name,
         'tag'         => $faker->text(10),
         'description' => $faker->text(200),
+        'created_at'  => $faker->dateTimeBetween('-1 year')->getTimestamp(),
     ];
 });
 

@@ -18,7 +18,8 @@ class TodosTable extends Migration
             $table->text('tag')->nullable();
             $table->text('description')->nullable();
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('done_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
+            $table->integer('status')->default('0');
         });
     }
 
