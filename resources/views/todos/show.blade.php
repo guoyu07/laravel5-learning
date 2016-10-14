@@ -1,4 +1,5 @@
-@extends('layout')
+@extends('layouts.default')
+
 @section('header')
 <div class="page-header">
         <h1>Todos / Show #{{$todo->id}}</h1>
@@ -40,5 +41,4 @@
 
         </div>
     </div>
-
 @endsection
