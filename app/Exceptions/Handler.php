@@ -48,4 +48,21 @@ class Handler extends ExceptionHandler
 
         return parent::render($request, $e);
     }
+
+    /**
+     * @param Exception $e
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @author yemg 10/13/16
+     */
+    protected function convertExceptionToResponse(Exception $e)
+    {
+        if (config('app.debug')) {
+            // return response()->view('error', ['error' => $e]);
+            return parent::convertExceptionToResponse($e);
+        }
+
+        // custom error page in production env
+        return response()->view('errors.500', [], 500);
+    }
+
 }
