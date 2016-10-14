@@ -30,8 +30,8 @@
                             <tr>
                                 <td>{{$todo->id}}</td>
                                 <td>{{$todo->name}}</td>
-                    <td>{{$todo->created_at}}</td>
-                    <td>{{$todo->description}}</td>
+                                <td>{{$todo->created_at}}</td>
+                                <td>{{$todo->description}}</td>
                                 <td class="text-right">
                                     <a class="btn btn-xs btn-primary" href="{{ route('todos.show', $todo->id) }}"><i class="glyphicon glyphicon-eye-open"></i> View</a>
                                     <a class="btn btn-xs btn-warning" href="{{ route('todos.edit', $todo->id) }}"><i class="glyphicon glyphicon-edit"></i> Edit</a>
