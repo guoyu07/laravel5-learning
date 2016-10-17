@@ -18,6 +18,95 @@ use App\Models\Traits\UserAvatarHelper;
 use Carbon\Carbon;
 use Cache;
 
+/**
+ * App\Models\User
+ *
+ * @property integer $id
+ * @property integer $github_id
+ * @property string $github_url
+ * @property string $email
+ * @property string $name
+ * @property string $login_token
+ * @property string $remember_token
+ * @property string $is_banned
+ * @property string $image_url
+ * @property integer $topic_count
+ * @property integer $reply_count
+ * @property integer $follower_count
+ * @property string $city
+ * @property string $company
+ * @property string $twitter_account
+ * @property string $personal_website
+ * @property string $introduction
+ * @property string $certification
+ * @property integer $notification_count
+ * @property string $github_name
+ * @property string $real_name
+ * @property string $linkedin
+ * @property string $payment_qrcode
+ * @property string $wechat_qrcode
+ * @property string $avatar
+ * @property string $login_qr
+ * @property string $wechat_openid
+ * @property string $wechat_unionid
+ * @property string $weibo_name
+ * @property string $weibo_link
+ * @property boolean $verified
+ * @property string $verification_token
+ * @property string $email_notify_enabled
+ * @property string $register_source
+ * @property string $last_actived_at
+ * @property \Carbon\Carbon $deleted_at
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Topic[] $topics
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Reply[] $replies
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Venturecraft\Revisionable\Revision[] $revisionHistory
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Role[] $roles
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\User[] $followers
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\User[] $followings
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereGithubId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereGithubUrl($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereEmail($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereName($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereLoginToken($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereRememberToken($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereIsBanned($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereImageUrl($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereTopicCount($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereReplyCount($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereFollowerCount($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereCity($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereCompany($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereTwitterAccount($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User wherePersonalWebsite($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereIntroduction($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereCertification($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereNotificationCount($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereGithubName($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereRealName($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereLinkedin($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User wherePaymentQrcode($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereWechatQrcode($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereAvatar($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereLoginQr($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereWechatOpenid($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereWechatUnionid($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereWeiboName($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereWeiboLink($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereVerified($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereVerificationToken($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereEmailNotifyEnabled($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereRegisterSource($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereLastActivedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereDeletedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User isRole($role)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User recent()
+ * @mixin \Eloquent
+ */
 class User extends Model implements AuthenticatableContract,
                                     AuthorizableContract
 {
