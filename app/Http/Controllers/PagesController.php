@@ -11,6 +11,7 @@ use Rss;
 use Purifier;
 use Phphub\Handler\EmailHandler;
 use Jrean\UserVerification\Facades\UserVerification;
+use Phphub\Sitemap\Builder;
 
 class PagesController extends Controller
 {
@@ -63,9 +64,9 @@ class PagesController extends Controller
         return response($feed, 200, array('Content-Type' => 'text/xml'));
     }
 
-    public function sitemap()
+    public function sitemap(Builder $builder)
     {
-        return app('Phphub\Sitemap\Builder')->render();
+        return $builder->render();
     }
 
     public function hallOfFames()
