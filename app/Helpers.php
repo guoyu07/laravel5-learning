@@ -96,5 +96,9 @@ function get_platform(){
 
 function is_request_from_api()
 {
-    return $_SERVER['SERVER_NAME'] == env('API_DOMAIN');
+    if (php_sapi_name() === 'cli' OR defined('STDIN')) {
+        return false;
+    } else {
+        return $_SERVER['SERVER_NAME'] == env('API_DOMAIN');
+    }
 }
