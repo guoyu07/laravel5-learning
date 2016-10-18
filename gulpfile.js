@@ -81,7 +81,7 @@ elixir(function(mix) {
             'assets/js/api.js',
         ])
 
-        .livereload();
+        .livereload().phpUnit();
 
     if (production) {
         mix.compress();
