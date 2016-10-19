@@ -10,6 +10,7 @@ use VideoRental\Order;
 class CustomerTest extends TestCase
 {
 
+
     /**
      * A basic test example.
      *
@@ -125,6 +126,14 @@ class CustomerTest extends TestCase
 
         /** assert */
         $this->assertEquals($expect, $actual);
+    }
+
+    /**
+     * @test
+     */
+    public function 我是对的()
+    {
+        $this->assertTrue(true);
     }
 
 }
