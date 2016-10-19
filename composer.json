@@ -58,7 +58,8 @@
         ],
         "psr-4": {
             "App\\": "app/",
-            "Phphub\\": "app/Phphub/"
+            "Phphub\\": "app/Phphub/",
+            "VideoRental\\": "app/VideoRental/"
         },
         "files": [
             "app/Helpers.php"
