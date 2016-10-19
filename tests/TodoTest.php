@@ -6,6 +6,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class TodoTest extends TestCase
 {
+
     /**
      * A basic test example.
      *
@@ -13,6 +14,16 @@ class TodoTest extends TestCase
      */
     public function testExample()
     {
-        $this->assertTrue(true);
+        /** arrange */
+
+        /** act */
+
+        /** assert */
+        $this->visit('/todos')->see('DESCRIPTION')
+            ->see('老师的交流时间')
+            ->dontSee('Laudantium');
+
+        $this->visit('todos?page=2')->see('Laudantium');
     }
+
 }
