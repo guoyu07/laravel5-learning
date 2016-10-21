@@ -35,7 +35,7 @@ class Order
     /**
      * @return Movie
      */
-    public function getMovie() : Movie
+    public function getMovie()
     {
         return $this->movie;
     }

@@ -120,6 +120,7 @@ Route::group(['middleware' => ['auth', 'admin_auth']], function () {
 });
 
 # ------------------ Todo Route ------------------------
+Route::get('/todos/ddd', 'TodoController@ddd');
 Route::resource('todos', 'TodoController');
 
 # ------------------ Task Route ------------------------

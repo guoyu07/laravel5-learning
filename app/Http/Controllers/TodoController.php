@@ -7,9 +7,46 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Collection;
 
 class TodoController extends Controller
 {
+
+    public function ddd()
+    {
+        $todos = Todo::orderBy('id', 'desc')->paginate(10);
+
+        $names = Collection::make($todos->items())->map(function($item){
+            return $item->name;
+        });
+
+        p($names->toArray(), $todos);
+        $employees = [
+            [
+                'name'       => 'John',
+                'department' => 'Sales',
+                'email'      => 'john@example.com'
+            ],
+            [
+                'name'       => 'Jane',
+                'department' => 'Marketing',
+                'email'      => 'jane@example.com'
+            ],
+            [
+                'name'       => 'Dave',
+                'department' => 'Marketing',
+                'email'      => 'dave@example.com'
+            ],
+        ];
+
+        $emailLookup = Collection::make($employees)->reduce(function($lookup, $item) {
+            $lookup[$item['email']] = $item['name'];
+            return $lookup;
+        }, []);
+        p($emailLookup, $employees);
+
+    }
+
     /**
      * Display a listing of the resource.
      *
