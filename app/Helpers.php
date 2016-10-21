@@ -1,4 +1,7 @@
 <?php
+
+use Illuminate\Support\Debug\Dumper;
+
 // 如：db:seed 或者 清空数据库命令的地方调用
 function insanity_check()
 {
@@ -100,5 +103,27 @@ function is_request_from_api()
         return false;
     } else {
         return $_SERVER['SERVER_NAME'] == env('API_DOMAIN');
+    }
+}
+
+
+if (! function_exists('p')) {
+    /**
+     * Dump the passed variables.
+     *
+     * @param  mixed
+     * @return void
+     * @author yemg 10/21/16
+     */
+    function p()
+    {
+        $bt = debug_backtrace();
+        $caller = array_shift($bt);
+        echo str_replace(base_path() . '/' , '', $caller['file']), ':', $caller['line'];
+        array_map(function ($n, $x) {
+            echo '<fieldset class="debug"> <legend>' . ($n) . '</legend>';
+            (new Dumper)->dump($x);
+            echo '</fieldset>';
+        }, range(1, func_num_args()), func_get_args());
     }
 }
