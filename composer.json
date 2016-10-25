@@ -59,7 +59,8 @@
         "psr-4": {
             "App\\": "app/",
             "Phphub\\": "app/Phphub/",
-            "VideoRental\\": "app/VideoRental/"
+            "VideoRental\\": "app/VideoRental/",
+            "BytePirateLaravel\\Tips\\": "packages/tips/src/"
         },
         "files": [
             "app/Helpers.php"
@@ -97,6 +98,10 @@
         {
             "type": "path",
             "url": "packages/follow"
+        },
+        {
+            "type": "path",
+            "url": "packages/tips"
         }
     ]
 }

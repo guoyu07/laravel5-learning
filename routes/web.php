@@ -125,3 +125,6 @@ Route::resource('todos', 'TodoController');
 
 # ------------------ Task Route ------------------------
 Route::resource('tasks', 'TaskController');
+
+# ------------------ Test Route ------------------------
+Route::resource('test', 'TestController');

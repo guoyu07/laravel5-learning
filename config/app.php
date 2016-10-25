@@ -182,6 +182,8 @@ return [
         Smartisan\Follow\FollowServiceProvider::class,
         Jrean\UserVerification\UserVerificationServiceProvider::class,
         Naux\Mail\SendCloudServiceProvider::class,
+        BytePirateLaravel\Tips\TipsServiceProvider::class,
+
 
         // API
         Dingo\Api\Provider\LaravelServiceProvider::class,
