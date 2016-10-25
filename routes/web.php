@@ -127,4 +127,5 @@ Route::resource('todos', 'TodoController');
 Route::resource('tasks', 'TaskController');
 
 # ------------------ Test Route ------------------------
+Route::get('test/tables', 'TestController@tables');
 Route::resource('test', 'TestController');
