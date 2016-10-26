@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\DB;
 class TestController extends Controller
 {
 
-    public function index(Tip $tips)
+    public function index(Tip $tip)
     {
-        return $tips->list();
+        return view('BytePirateLaravel::tips', ['tips' => $tip::$tips]);
     }
 
     public function tables()

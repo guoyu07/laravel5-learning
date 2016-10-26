@@ -21,6 +21,9 @@ class TipsServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadViewsFrom(__DIR__ . '/views', 'BytePirateLaravel');
+        if (!$this->app->routesAreCached()) {
+            require __DIR__ . '/routes.php';
+        }
     }
 
     /**

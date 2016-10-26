@@ -27,11 +27,4 @@ class Tip
         info('enter TIP::__construct');
     }
 
-    public function list()
-    {
-        $tips = self::$tips;
-        return view('BytePirateLaravel::tips', compact('tips'));
-        // p(self::$tips);
-    }
-
 }
