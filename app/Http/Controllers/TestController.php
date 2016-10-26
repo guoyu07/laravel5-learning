@@ -15,7 +15,13 @@ class TestController extends Controller
 
     public function index(Tip $tip)
     {
+        // get $tip instance by param hint
         return view('BytePirateLaravel::tips', ['tips' => $tip::$tips]);
+
+        // or by global method app('tips') which registered at TipsServiceProvider.
+        // $app = app('tips');
+        // return view('BytePirateLaravel::tips', ['tips' => $app::$tips]);
+
     }
 
     public function tables()
