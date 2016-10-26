@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1cddcc5b3b5b04f3618292dcae88ab9a",
-    "content-hash": "230c62e892992e879fdae72c3375c1ed",
+    "hash": "8c4989f59b222a3b212b317e50f9a7a9",
+    "content-hash": "9e2bea34440018978eab9d013ec5d466",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -103,6 +103,47 @@
                 "nested set"
             ],
             "time": "2015-03-04 12:07:54"
+        },
+        {
+            "name": "byte-pirate-laravel/tips",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/byte-pirate/laravel-tips.git",
+                "reference": "28ef9e3560c38fce3c6b855e21687e1a1fdbafca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/byte-pirate/laravel-tips/28ef9e3560c38fce3c6b855e21687e1a1fdbafca.zip",
+                "reference": "28ef9e3560c38fce3c6b855e21687e1a1fdbafca",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/laravel": ">= 5.1",
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "laravel/laravel": "dev-develop",
+                "phpunit/phpunit": "^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "BytePirateLaravel\\Tips\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "byte-pirate",
+                    "email": "forc2dm@gmail.com"
+                }
+            ],
+            "description": "Laravel 5 tips",
+            "time": "2016-10-26 08:29:52"
         },
         {
             "name": "ckeditor/ckeditor",
