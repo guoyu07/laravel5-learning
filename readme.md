@@ -6,7 +6,7 @@
 * add .travis.yml
 * add ide-helper.php config
 
-see more at [History](https://github.com/byte-pirate/laravel5-learning/blob/master/readme.md)
+see more at [Change.md](https://github.com/byte-pirate/laravel5-learning/blob/master/Change.md)
 
 --------------------------------------------------------------
 
