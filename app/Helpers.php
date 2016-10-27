@@ -113,7 +113,6 @@ if (! function_exists('p')) {
      *
      * @param  mixed
      * @return void
-     * @author yemg 10/21/16
      */
     function p()
     {

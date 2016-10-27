@@ -7,7 +7,6 @@ class TodosTable extends Migration
 {
     /**
      * Run the migrations.
-     * @author yemg 10/12/16
      * @return void
      */
     public function up()

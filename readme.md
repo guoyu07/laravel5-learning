@@ -1,4 +1,14 @@
+## PRACTICE CHANGELOG
 
+  * Add codeclimate conf files.
+  * fix conf
+  * update .gitignore
+  * add .travis.yml
+  * add ide-helper.php config
+
+   see more at [History](./History.md)
+
+--------------------------------------------------------------
 
 ![macbook](https://cloud.githubusercontent.com/assets/324764/18414545/d875e012-77ff-11e6-9249-0b56a6460cb8.png)
 

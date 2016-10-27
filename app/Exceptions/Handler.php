@@ -52,7 +52,6 @@ class Handler extends ExceptionHandler
     /**
      * @param Exception $e
      * @return \Symfony\Component\HttpFoundation\Response
-     * @author yemg 10/13/16
      */
     protected function convertExceptionToResponse(Exception $e)
     {

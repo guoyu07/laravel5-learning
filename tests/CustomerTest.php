@@ -10,12 +10,10 @@ use VideoRental\Order;
 class CustomerTest extends TestCase
 {
 
-
     /**
      * A basic test example.
      *
      * @return void
-     * @group yemg
      * @group CustomerTest
      */
     public function test_order_1_regular_movie_with_10_days()
@@ -37,7 +35,6 @@ class CustomerTest extends TestCase
      * A basic test example.
      *
      * @return void
-     * @group yemg
      * @group CustomerTest
      */
     public function test_order_1_regular_movie_with_12_days()
@@ -59,7 +56,6 @@ class CustomerTest extends TestCase
      * A basic test example.
      *
      * @return void
-     * @group yemg
      * @group CustomerTest
      */
     public function test_order_1_new_release_movie_with_10_days()
@@ -82,7 +78,6 @@ class CustomerTest extends TestCase
      * A basic test example.
      *
      * @return void
-     * @group yemg
      * @group CustomerTest
      */
     public function test_order_3_new_release_movie_with_10_days()
@@ -109,7 +104,6 @@ class CustomerTest extends TestCase
      * A basic test example.
      *
      * @return void
-     * @group yemg
      * @group CustomerTest
      */
     public function test_order_1_children_movie_with_12_days()
