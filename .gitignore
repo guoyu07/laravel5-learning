@@ -19,3 +19,5 @@ note
 .envrc
 .direnv
 bootstrap/cache
+
+packages/tips/
