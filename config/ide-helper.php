@@ -1,4 +1,4 @@
-Lhg<?php
+<?php
 /**
  * MIT License
  *
