@@ -1,12 +1,12 @@
 ## PRACTICE CHANGELOG
 
-  * Add codeclimate conf files.
-  * fix conf
-  * update .gitignore
-  * add .travis.yml
-  * add ide-helper.php config
+* Add codeclimate conf files.
+* fix conf
+* update .gitignore
+* add .travis.yml
+* add ide-helper.php config
 
-   see more at [History](./History.md)
+see more at [History](https://github.com/byte-pirate/laravel5-learning/blob/master/readme.md)
 
 --------------------------------------------------------------
 
